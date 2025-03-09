@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: flask-prediction-app
+    runtime: python
+    region: oregon  # You can change region if needed
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn -w 4 -b 0.0.0.0:10000 cross:app"
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.9"
+    plan: free
