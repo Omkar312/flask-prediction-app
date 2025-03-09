@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "cross.py", "use": "@vercel/python" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "cross.py" }
+  ]
+}
